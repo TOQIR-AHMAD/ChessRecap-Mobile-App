@@ -112,9 +112,19 @@ fetching is on the server.
   search, which keeps the interactive board snappy. `onUpdate` streams each
   improved line so the UI deepens the evaluation in real time.
 
-## License / attribution
+## License & credits
 
-ChessFold is original work. Stockfish is licensed under the GPLv3; the bundled
-WASM build comes from [nmrugg/stockfish.js](https://github.com/nmrugg/stockfish.js).
-# ChessRecap
-# ChessRecap-Mobile-App
+This project is licensed under the **GNU General Public License v3.0 or later** —
+see [LICENSE](LICENSE).
+
+It is GPL-licensed because it bundles and distributes **Stockfish**, a GPLv3
+chess engine. The engine binaries live in [`public/stockfish/`](public/stockfish/),
+with the GPL text (`COPYING.txt`) and a notice (`NOTICE.txt`) alongside them. The
+WASM build comes from [nmrugg/stockfish.js](https://github.com/nmrugg/stockfish.js);
+Stockfish itself: [official-stockfish/Stockfish](https://github.com/official-stockfish/Stockfish).
+
+The application code is original work. A full list of third-party software and
+licenses is in [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+
+Game data is fetched from the public Chess.com and Lichess APIs, subject to their
+terms of service.
