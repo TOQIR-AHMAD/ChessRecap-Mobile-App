@@ -58,7 +58,9 @@ async function main() {
     const hasNative =
       existsSync(join(root, "android")) || existsSync(join(root, "ios"));
     if (hasNative) {
-      runStep("npx", ["cap", "sync"]);
+      // CI can set MOBILE_SYNC_PLATFORMS=android to sync only Android (skip iOS).
+      const only = process.env.MOBILE_SYNC_PLATFORMS;
+      runStep("npx", only ? ["cap", "sync", only] : ["cap", "sync"]);
     } else {
       console.log("\n[build-mobile] Static export ready in ./out");
       console.log("[build-mobile] No native platforms yet — add one with:");
